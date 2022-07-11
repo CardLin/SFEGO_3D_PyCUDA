@@ -257,7 +257,7 @@ def SFEGO_3D(np_input_data, dim_x, dim_y, dim_z, radius):
     knl_integral_fnc = mod.get_function("SFEGO_3d_integral")
     
     #Calculate CUDA Execution Dimension
-    bdim = (16, 16, 1)
+    bdim = (8, 8, 8)
     dx, mx = divmod(dim_x, bdim[0])
     dy, my = divmod(dim_y, bdim[1])
     dz, mz = divmod(dim_z, bdim[2])
